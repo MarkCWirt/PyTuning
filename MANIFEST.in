@@ -1,0 +1,8 @@
+include *.py *.rst *.txt CHANGELOG .travis.yml
+recursive-include docs *
+recursive-exclude build  *
+recursive-exclude dist  *
+recursive-exclude .  *.pyc __pycache__
+recursive-include src *
+
+
