@@ -1,6 +1,8 @@
 PyTuning
 ========
 
+|build|
+
 **If you are reading this:** You may want to wait a day or two before cloning
 this project. I'm in the final stages of tweaking it in preparation of an
 initial public release. I'll remove this notice once that release has been
@@ -96,3 +98,5 @@ Roadmap
 More scales, more visualizations, more analysis functions. Pull requests are welcome!
 
 
+.. |build| image:: https://travis-ci.org/MarkCWirt/PyTuning.svg?branch=master
+   :target: https://travis-ci.org/MarkCWirt/PyTUning
