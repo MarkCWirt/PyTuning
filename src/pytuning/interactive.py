@@ -49,7 +49,10 @@ except NameError:
 
 sp.init_printing(use_unicode=True)
 
-from IPython.display import display
+try:
+    from IPython.display import display
+except:
+    pass
 
 from pytuning.scales import *
 from pytuning.utilities import *
