@@ -1,8 +1,11 @@
+Date:       2 December 2016
+Version:    0.7.1
 
-    * Corrections to typos in the documentation
-    * Change to sphinx so that autofunction is supported on readthedocs.io
+    * Corrections to typos in the documentation.
+    * Change to sphinx so that autofunction is supported on readthedocs.io.
 
 Date:       1 December 2016
 Version:    0.7.0
-    * Initial Public Release
+
+    * Initial Public Release.
 
