@@ -94,4 +94,4 @@ More scales, more visualizations, more analysis functions. Pull requests are wel
 
 
 .. |build| image:: https://travis-ci.org/MarkCWirt/PyTuning.svg?branch=master
-   :target: https://travis-ci.org/MarkCWirt/PyTUning
+   :target: https://travis-ci.org/MarkCWirt/PyTuning
