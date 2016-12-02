@@ -105,7 +105,7 @@ The PyTuning distribution contains a script, ``interactive.py``, that can
 be used to import the package into your namespace, as well as setting up
 some convenience functions. Where that script lives on your computer can
 vary by platform as well as python distribution. If you're on Linux
-and installed PyTUning with your system python, there's a good chance
+and installed PyTuning with your system python, there's a good chance
 it's in ``/usr/bin``. If you installed into the Miniconda distribution, then
 it will probably be somewhere like ``~/miniconda/bin``.
 

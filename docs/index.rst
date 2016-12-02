@@ -47,7 +47,7 @@ software package, with a few differences:
 
 * Scala is a mature, full-featured package that includes many, many scales
   and functions for manipulating and analyzing those scales. This project
-  is much newer and less mature; it's scope is currently much less (but
+  is much newer and less mature; its scope is currently much less (but
   hopefully it will be easy to extend).
 * PyTuning is written in Python and relies on modern, well maintained dependencies.
   Scala is written in Ada, and while this is an interesting choice, it probably
@@ -74,7 +74,7 @@ which Pytuning is `registered <https://pypi.python.org/pypi/PyTuning/>`__:
 
 There are two hard dependencies for PyTuning: `SymPy <http://www.sympy.org/en/index.html>`__ and
 `NumPy <http://www.numpy.org/>`__. SymPy is a pure Python library and ``pip`` will handle
-it's installation nicely. NumPy is a more complicated package and if installed via ``pip`` may
+its installation nicely. NumPy is a more complicated package and if installed via ``pip`` may
 involve much compilation; it would probably behoove you to install the package manually via
 whatever mechanism your platform provides before ``pip`` installing the package .
 

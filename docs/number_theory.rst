@@ -12,7 +12,7 @@ PyTuning contains functions for finding the `odd Limit
 <https://en.wikipedia.org/wiki/Limit_(music)#Odd_limit>`__ for both intervals
 and scales.
 
-We can define and interval -- say, :math:`\frac{45}{32}`, and fine its odd-limit
+We can define and interval -- say, :math:`\frac{45}{32}`, and find its odd-limit
 with the following:
 
 .. code:: python
