@@ -3,11 +3,6 @@ PyTuning
 
 |build|
 
-**If you are reading this:** You may want to wait a day or two before cloning
-this project. I'm in the final stages of tweaking it in preparation of an
-initial public release. I'll remove this notice once that release has been
-made.
-
 PyTuning is a Python library intended for the exploration of musical scales
 and microtonalities. It can be used by developers who need ways of calculating,
 analyzing, and manipulating musical scales, but it can also be used interactively.
