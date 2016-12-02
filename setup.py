@@ -5,7 +5,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(name='PyTuning',
-      version='0.7.0',
+      version='HEAD',
       description='A python library for exploration of musical tunings.',
       author='Mark Conway Wirt',
       author_email='markcwirt@gmail.com',
