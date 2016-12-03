@@ -71,3 +71,14 @@ will return 5 as the limit.
 .. autofunction:: pytuning.number_theory.prime_limit
 
 .. autofunction:: pytuning.number_theory.find_prime_limit_for_scale
+
+Prime Factorization of Degrees
+------------------------------
+
+PyTuning has functions for breaking a ratio down into prime factors, and
+the inverse of reassembling them.
+
+.. autofunction:: pytuning.number_theory.prime_factor_ratio
+
+.. autofunction:: pytuning.number_theory.create_ratio_from_primes
+

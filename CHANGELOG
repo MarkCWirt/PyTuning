@@ -1,3 +1,7 @@
+    * New functions:
+      * `prime_factor_ratio()`
+      * `create_ratio_from_primes()`
+
 Date:       2 December 2016
 Version:    0.7.1
 
