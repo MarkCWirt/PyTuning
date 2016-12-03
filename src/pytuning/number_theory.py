@@ -75,7 +75,7 @@ def prime_factor_ratio(r, return_as_vector = False):
         
     .. math::
         
-        \\frac{3^4}{2^{-4} \cdot 5^{-1}}
+        \\frac{3^4}{2^{4} \cdot 5^{1}}
         
     If ``return_as_vector`` is ``True``, the function will return a tuple, 
     with each position a successive prime. The above example yields:
