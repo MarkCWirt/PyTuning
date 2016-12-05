@@ -6,7 +6,8 @@ Created on Wed Nov 16 09:36:58 2016
 @author: mark
 """
 
-__all__ = ["odd_limit", "prime_limit", "find_prime_limit_for_scale","find_odd_limit_for_scale"]
+__all__ = ["odd_limit", "prime_limit", "find_prime_limit_for_scale",
+           "find_odd_limit_for_scale", "prime_factor_ratio", "create_ratio_from_primes"]
 
 from sympy.ntheory.factor_ import factorint, factorrat, isprime
 import sympy as sp
