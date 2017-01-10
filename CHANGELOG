@@ -1,3 +1,6 @@
+    * Added the ability to change the reference frequency of the
+      tuning tables, so that one isn't limited to the 12-EDO standard
+      for the mapping.
     * New functions:
       * `prime_factor_ratio()`
       * `create_ratio_from_primes()`

@@ -9,12 +9,14 @@ import sympy as sp
 
 from pytuning.utilities import note_number_to_freq, ratio_to_cents
 
-def create_timidity_tuning(scale, reference_note=60):
+def create_timidity_tuning(scale, reference_note=60, reference_frequency=None):
     '''    
     Create a Timidity++ tuning table
     
     :param scale: The scale to model (list of frequency ratios)
     :param reference_note: The MIDI number of the absolute frequency reference
+    :param reference_frequency: The frequency of the reference note. If ``None``
+        (the default) the frequency will be taken from the standard MIDI 12-EDO tuning
     :returns: A Timidity tuning table as a ``String``
     
     The default value of ``reference_note`` pegs
@@ -59,8 +61,9 @@ def create_timidity_tuning(scale, reference_note=60):
         timidity -Z table.name -iA
         
     '''
-    
-    reference_frequency = note_number_to_freq(reference_note)
+    if reference_frequency is None:
+        reference_frequency = note_number_to_freq(reference_note)
+        
     output_string='''# Timidity tuning table created by pytuning,
 # call timidity with the -Z option to enable.
 # Note reference: %d; Freq reference: %f Hz''' % (reference_note, reference_frequency)
@@ -73,20 +76,23 @@ def create_timidity_tuning(scale, reference_note=60):
         )
     return output_string
     
-def create_em_tuning(scale, reference_note=69):
+def create_em_tuning(scale, reference_note=60, reference_frequency=None):
     '''    
         Create a Timidity++ tuning table
         
         :param scale: The scale to model (list of frequency ratios)
         :param reference_note: The MIDI number of the absolute frequency reference
-        :param reference_frequency: The frequency (in Hz) of the reference note
+        :param reference_frequency: The frequency of the reference note. If ``None``
+            (the default) the frequency will be taken from the standard MIDI 12-EDO tuning
         :returns: An Emergent tuning table as a ``String``
         
         The default value of ``reference_note`` and ``reference_frequency`` pegs
         the scale to to the standard concert tuning of middle C (A = 440Hz).
         
     '''
-    reference_frequency = note_number_to_freq(reference_note)
+    if reference_frequency is None:
+        reference_frequency = note_number_to_freq(reference_note)
+        
     output_string='''# Emergent Tuning Table created by MCW
 # Note reference: %d; Freq reference: %f Hz''' % (reference_note, reference_frequency)
     for note in range(128):
@@ -96,12 +102,15 @@ def create_em_tuning(scale, reference_note=69):
         ) + ")"
     return output_string
     
-def create_fluidsynth_tuning(scale, reference_note=60, chan=[0], bank=0, prog=[0]):
+def create_fluidsynth_tuning(scale, reference_note=60, chan=[0], bank=0, prog=[0], 
+                             reference_frequency=None):
     '''    
     Create a Fluidsynth tuning table
     
     :param scale: The scale to model (list of frequency ratios)
     :param reference_note: The MIDI number of the absolute frequency reference
+    :param reference_frequency: The frequency of the reference note. If ``None``
+        (the default) the frequency will be taken from the standard MIDI 12-EDO tuning
     :param chan: A list of channels for which to create the table
     :param bank: The bank for the tuning table
     :param prog: A list of program numbers for the tuning table
@@ -155,7 +164,9 @@ def create_fluidsynth_tuning(scale, reference_note=60, chan=[0], bank=0, prog=[0
     
     # The fluidsynth tuning table apears to be in cents, based upon a standard 12-EDO scale,
     # 69 = 440.0 Thus we'll need to calculate this base freqency
-    reference_frequency = note_number_to_freq(reference_note)
+    
+    if reference_frequency is None:
+        reference_frequency = note_number_to_freq(reference_note)
 
     base_freq = note_number_to_freq(0, None, reference_note=69,
                                     reference_frequency=440.0)
@@ -273,12 +284,15 @@ def create_scala_tuning(scale, name):
         output = output +"\n%s" % representation
     return output
     
-def create_csound_tuning(scale, reference_note=60, table_num=1):
+def create_csound_tuning(scale, reference_note=60, reference_frequency=None, 
+                         table_num=1):
     '''    
     Create a CSound tuning table
     
     :param scale: The scale (list of frequency ratios)
     :param reference_note: The MIDI number of the absolute frequency reference
+    :param reference_frequency: The frequency of the reference note. If ``None``
+        (the default) the frequency will be taken from the standard MIDI 12-EDO tuning
     :param table_num: The **f** table number to use
     
     CSound has many ways of generating microtonalities. For ``pytuning``
@@ -316,7 +330,9 @@ def create_csound_tuning(scale, reference_note=60, table_num=1):
                      8372.01809  8869.84419  9397.27257  9956.06348 10548.08182 11175.30341 11839.82153 12543.85395
 
     '''
-    reference_frequency = note_number_to_freq(reference_note)
+    if reference_frequency is None:
+        reference_frequency = note_number_to_freq(reference_note)
+        
     output_string = ""
     entries_per_line = 8
     line = "f%d 0 256 -2 " % table_num
