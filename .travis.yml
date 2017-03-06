@@ -2,7 +2,8 @@ language: python
 python:
   - "2.7"
   - "3.5"
-  - "3.5-dev" 
+  - "3.6"
+  - "nightly" 
 install:
     - python setup.py -q install
 script: python  -m unittest discover  src/unittests
