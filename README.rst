@@ -85,6 +85,7 @@ Documentation
 -------------
 
 Documentation for the package can be found on `Read the Docs <http://pytuning.readthedocs.io/>`__.
+Documentation for the latest development version is `here  <http://pytuning.readthedocs.io/en/latest/>`__.
 
 
 Roadmap
