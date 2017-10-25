@@ -111,7 +111,7 @@ it will probably be somewhere like ``~/miniconda/bin``.
 
 Once you've launched the console, this script should be loaded into
 the environment with the ``%load`` command. This will load it into the console,
-but you'll need to execute it. This is normally done with ``Shitf-enter``,
+but you'll need to execute it. This is normally done with ``Shift-Enter``,
 although ``Control-enter`` may be used on some platforms/versions.
 
 .. image:: images/qtconsole_boot.png
