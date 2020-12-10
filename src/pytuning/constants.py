@@ -29,9 +29,14 @@ five_limit_constructors = [
     (sp.Rational(9,8),   "T"),
 ]
 
+try:
+    power = sp.power
+except AttributeError:
+    power = sp
+
 edo12_constructors = [
-    (sp.power.Pow(2,sp.Rational(2,12)), "T"),
-    (sp.power.Pow(2,sp.Rational(1,12)), "s"),
+    (power.Pow(2,sp.Rational(2,12)), "T"),
+    (power.Pow(2,sp.Rational(1,12)), "s"),
 ]
 
 lucy_L = sp.root(2,2*sp.pi)
