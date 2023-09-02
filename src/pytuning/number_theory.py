@@ -12,6 +12,11 @@ __all__ = ["odd_limit", "prime_limit", "find_prime_limit_for_scale",
 from sympy.ntheory.factor_ import factorint, factorrat, isprime
 import sympy as sp
 
+try:
+    power = sp.power
+except AttributeError:
+    power = sp
+
 # The Odd-Limit
 
 odd_limit = lambda i: max([x for x in [i.q,i.p] if x %2 != 0])
@@ -136,6 +141,6 @@ def create_ratio_from_primes(factors):
         internal_factors = factors
     output = sp.Integer(1)
     for k, v in internal_factors.items():
-        output = output * sp.power.Pow(k, v)
+        output = output * power.Pow(k, v)
     return output
 

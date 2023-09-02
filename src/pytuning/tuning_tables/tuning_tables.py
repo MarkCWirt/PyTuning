@@ -7,6 +7,11 @@ Created on Tue May 26 10:49:30 2015
 
 import sympy as sp
 
+try:
+    numbers = sp.numbers
+except AttributeError:
+    numbers = sp.core.numbers
+
 from pytuning.utilities import note_number_to_freq, ratio_to_cents
 
 def create_timidity_tuning(scale, reference_note=60, reference_frequency=None):
@@ -274,10 +279,10 @@ def create_scala_tuning(scale, name):
     for degree in scale[1:]:
         #print degree
         #print type(degree)
-        if type(degree) == sp.numbers.Rational and type(sp.fraction(degree)[0]) == sp.numbers.Integer and \
-            type(sp.fraction(degree)[1]) == sp.numbers.Integer:
+        if type(degree) == numbers.Rational and type(sp.fraction(degree)[0]) == numbers.Integer and \
+            type(sp.fraction(degree)[1]) == numbers.Integer:
                 representation = "%s" % degree
-        elif type(degree) == sp.numbers.Integer or type(degree) == sp.numbers.One:
+        elif type(degree) == numbers.Integer or type(degree) == numbers.One:
             representation = "%s/1" % degree
         else:
             representation = "%0.5f" % ratio_to_cents(degree)
