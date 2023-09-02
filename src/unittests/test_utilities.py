@@ -12,6 +12,11 @@ import unittest, sys
 
 import sympy as sp
 
+try:
+    power = sp.power
+except AttributeError:
+    power = sp
+
 from pytuning.utilities import normalize_interval, distinct_intervals, get_mode_masks, mask_scale, \
     mask_to_steps, ratio_to_cents, cents_to_ratio, note_number_to_freq, \
     compare_two_scales, ratio_to_name
@@ -54,8 +59,8 @@ class TestUtilities(unittest.TestCase):
         
     def test_distinct_intervals(self):
         self.assertListEqual([sp.sqrt(2)], distinct_intervals(create_edo_scale(2)))
-        self.assertTrue(sp.power.Pow(2, sp.Rational(1,3)) in distinct_intervals(create_edo_scale(3)))
-        self.assertTrue(sp.power.Pow(2, sp.Rational(2,3)) in distinct_intervals(create_edo_scale(3)))
+        self.assertTrue(power.Pow(2, sp.Rational(1,3)) in distinct_intervals(create_edo_scale(3)))
+        self.assertTrue(power.Pow(2, sp.Rational(2,3)) in distinct_intervals(create_edo_scale(3)))
         
     def test_mode_masks(self):
         masks = [(0, 1, 6), (0, 2, 6), (0, 3, 6), (0, 4, 6), (0, 5, 6)]
