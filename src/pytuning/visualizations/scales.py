@@ -12,19 +12,19 @@ import numpy as np
 
 from pytuning.utilities import normalize_interval
 
-my_palette = np.array([np.array([0.13333333,  0.13333333,  0.13333333,  1.]),
-                       np.array([0.31836986,  0.06640523,  0.31836986,  1.]),
-                       np.array([0.50196078,  0.,          0.50196078,  1.])])
+my_palette = np.array([np.array([0.13333333, 0.13333333, 0.13333333, 1.]),
+                       np.array([0.31836986, 0.06640523, 0.31836986, 1.]),
+                       np.array([0.50196078, 0., 0.50196078, 1.])])
 try:
-    import matplotlib.pyplot as plt
-    import matplotlib
+    import matplotlib.pyplot as plt   # type: ignore
+    import matplotlib                 # type: ignore
     my_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("Default", my_palette)
 except Exception:
     print("Wanring: Matplotlib not found.Plotting will not be available")
 
 
 try:
-    import seaborn as sns
+    import seaborn as sns   # type: ignore
     sns.set()
     my_palette = sns.dark_palette('purple', 10)
     my_cmap = matplotlib.colors.LinearSegmentedColormap.from_list("Default", my_palette)
@@ -120,7 +120,7 @@ def consonance_matrix(scale, metric_function=None, figsize=(10, 8),
     data = np.zeros((len(scale), len(scale)))
     for index1 in range(len(scale)):
         for index2 in range(len(scale)):
-            entry = scale[index1]/scale[index2]
+            entry = scale[index1] / scale[index2]
             if metric_function is not None:
                 entry_value = metric_function(entry)
             else:
@@ -179,7 +179,7 @@ def consonance_matrix(scale, metric_function=None, figsize=(10, 8),
 
 
 if __name__ == '__main__':
-    from IPython.display import display
+    from IPython.display import display    # type: ignore
     from pytuning.scales import create_harmonic_scale
     try:
         get_ipython().magic('matplotlib inline')

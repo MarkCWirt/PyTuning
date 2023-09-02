@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages   # type: ignore
 
 
 with open('README.rst') as file:
@@ -17,20 +17,20 @@ setup(name='PyTuning',
       package_dir={'': 'src'},
       package_data={
           '': ['README.rst', 'License.txt', 'docs/*'],
-          },
+      },
       include_package_data=True,
       platforms='Platform Independent',
       classifiers=[
-            'Development Status :: 4 - Beta',
-            'Intended Audience :: Developers',
-            'Intended Audience :: End Users/Desktop',
-            'Programming Language :: Python :: 2.7',
-            'Programming Language :: Python :: 3',
-            'License :: OSI Approved :: MIT License',
-            'Topic :: Multimedia :: Sound/Audio',
-            'Topic :: Multimedia :: Sound/Audio :: Analysis',
-            'Topic :: Software Development :: Libraries :: Python Modules',
-          ],
+          'Development Status :: 4 - Beta',
+          'Intended Audience :: Developers',
+          'Intended Audience :: End Users/Desktop',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'License :: OSI Approved :: MIT License',
+          'Topic :: Multimedia :: Sound/Audio',
+          'Topic :: Multimedia :: Sound/Audio :: Analysis',
+          'Topic :: Software Development :: Libraries :: Python Modules',
+      ],
       keywords='Music Scales Tuning Microtonalities',
       long_description=long_description
       )
