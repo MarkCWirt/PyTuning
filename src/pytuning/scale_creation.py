@@ -331,7 +331,7 @@ def find_factors(interval, constructors, max_terms=8):
     
     .. code::
 
-        lucy_construtors = [
+        lucy_constructors = [
             (lucy_L,               "L"  ),
             (lucy_s,               "s"  ),
             (sp.Integer(1)/lucy_L, "1/L"),

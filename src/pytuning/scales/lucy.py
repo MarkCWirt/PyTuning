@@ -23,7 +23,7 @@ import numpy as np
 import functools
 
 from pytuning.scale_creation import find_factors, create_scale_from_scale
-from pytuning.constants import lucy_construtors
+from pytuning.constants import lucy_constructors
 from pytuning.utilities import normalize_interval
 from pytuning.scales import create_diatonic_scale
 
@@ -204,7 +204,7 @@ and is numerically:
     '''
         
     split_mode = [x for x in mode]
-    return create_diatonic_scale(lucy_construtors, split_mode)
+    return create_diatonic_scale(lucy_constructors, split_mode)
 
 def create_lucy_tone_table(scale_size=44, number_fourths=22, max_terms=8):
     '''
@@ -293,7 +293,7 @@ def calculate_lucy_mode_twelve_tone(mode):
 # Derived Functions
     
 find_lucy_interval = functools.partial(
-    find_factors, constructors=lucy_construtors,
+    find_factors, constructors=lucy_constructors,
     max_terms=15)
                                         
 def create_lucy_scale_from_scale(scale, max_terms=8, tone_table=None):

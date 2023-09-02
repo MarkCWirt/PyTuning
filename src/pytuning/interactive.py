@@ -21,14 +21,14 @@ from typing import List, Any
 import sympy as sp
 
 try:
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt   # type: ignore
     plt.ioff()
     get_ipython().magic(u'matplotlib')
 except Exception:
     print("Warning: Matplotlib not available")
 
 try:
-    import seaborn as sns
+    import seaborn as sns   # type: ignore
     sns.set()
 except Exception:
     print("Warning: Seaborn not available")
@@ -54,7 +54,7 @@ except NameError:
 sp.init_printing(use_unicode=True)
 
 try:
-    from IPython.display import display
+    from IPython.display import display   # type: ignore
 except Exception:
     pass
 
