@@ -32,7 +32,7 @@ needs_sphinx = '1.4.3'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    #'sphinx.ext.mathjax',
+    # 'sphinx.ext.mathjax',
     'sphinx.ext.imgmath',
 ]
 

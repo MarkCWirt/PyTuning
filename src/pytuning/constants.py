@@ -7,26 +7,28 @@ Created on Tue May 26 11:15:40 2015
 from __future__ import print_function, division
 import sympy as sp
 
-all = [ "cent", "perfect_fifth", "perfect_fourth", "octave", "perfect_major_third", \
-       "quarter_comma", "five_limit_constructors", "edo12_constructors", \
-       "lucy_construtors", "all_constructors", "interval_catalog"]
+all = [
+    "cent", "perfect_fifth", "perfect_fourth", "octave", "perfect_major_third",
+    "quarter_comma", "five_limit_constructors", "edo12_constructors",
+    "lucy_construtors", "all_constructors", "interval_catalog"
+]
 
 # Ratio Constants
 
-cent                  = sp.Integer(2)**sp.Rational(1,1200)
-perfect_fifth         = sp.Integer(3)/sp.Integer(2)
-perfect_fourth        = sp.Integer(4)/sp.Integer(3)
-octave                = sp.Integer(2)
-perfect_major_third   = sp.Integer(5)/sp.Integer(4)
-syntonic_comma        = sp.Rational(81,80)
-quarter_comma         = sp.sqrt(sp.sqrt(syntonic_comma))
+cent = sp.Integer(2)**sp.Rational(1, 1200)
+perfect_fifth = sp.Integer(3)/sp.Integer(2)
+perfect_fourth = sp.Integer(4)/sp.Integer(3)
+octave = sp.Integer(2)
+perfect_major_third = sp.Integer(5)/sp.Integer(4)
+syntonic_comma = sp.Rational(81, 80)
+quarter_comma = sp.sqrt(sp.sqrt(syntonic_comma))
 
 # Scale definition constants
 
 five_limit_constructors = [
-    (sp.Rational(16,15), "s"),
-    (sp.Rational(10,9),  "t"),
-    (sp.Rational(9,8),   "T"),
+    (sp.Rational(16, 15), "s"),
+    (sp.Rational(10, 9),  "t"),
+    (sp.Rational(9, 8),   "T"),
 ]
 
 try:
@@ -35,56 +37,56 @@ except AttributeError:
     power = sp
 
 edo12_constructors = [
-    (power.Pow(2,sp.Rational(2,12)), "T"),
-    (power.Pow(2,sp.Rational(1,12)), "s"),
+    (power.Pow(2, sp.Rational(2, 12)), "T"),
+    (power.Pow(2, sp.Rational(1, 12)), "s"),
 ]
 
-lucy_L = sp.root(2,2*sp.pi)
+lucy_L = sp.root(2, 2*sp.pi)
 lucy_s = sp.sqrt(2/lucy_L**5)
 
 lucy_construtors = [
-    (lucy_L,               "L"  ),
-    (lucy_s,               "s"  ),
+    (lucy_L,               "L"),
+    (lucy_s,               "s"),
     (sp.Integer(1)/lucy_L, "1/L"),
     (sp.Integer(1)/lucy_s, "1/s"),
-    
+
 ]
 
 interval_catalog = [
-    ("Unison" , sp.Integer(1)),
-    ("Ragisma" , sp.Rational(4375, 4374)),
+    ("Unison", sp.Integer(1)),
+    ("Ragisma", sp.Rational(4375, 4374)),
     ("Breedsma", sp.Rational(2401, 2400)),
-    ("Cent", sp.Integer(2) ** sp.Rational(1,1200)),
-    ("Millioctave", sp.Integer(2) ** sp.Rational(1,1000)),
+    ("Cent", sp.Integer(2) ** sp.Rational(1, 1200)),
+    ("Millioctave", sp.Integer(2) ** sp.Rational(1, 1000)),
     ("Schisma", sp.Rational(32805, 32768)),
-    ("Savart",  sp.Integer(10) ** sp.Rational(1,1000)),
+    ("Savart",  sp.Integer(10) ** sp.Rational(1, 1000)),
     ("Septimal Kleisma", sp.Rational(225, 224)),
     ("Kleisma", sp.Rational(15625, 15552)),
     ("Semicomma", sp.Rational(2109375, 2097152)),
-    ("Sixteenth Tone",  sp.Integer(2) ** sp.Rational(1,96)),
+    ("Sixteenth Tone",  sp.Integer(2) ** sp.Rational(1, 96)),
     ("Orwell Comma", sp.Rational(1728, 1715)),
     ("Hundred-twenty-ninth Harmonic", sp.Rational(129, 128)),
     ("Small Septimal Semicomma", sp.Rational(126, 125)),
     ("Unidecimal Seconds Comma", sp.Rational(121, 120)),
     ("Diaschisma", sp.Rational(2048, 2025)),
     ("Syntonic Comma", sp.Rational(81, 80)),
-    ("Holdrian Comma",  sp.Integer(2) ** sp.Rational(1,53)),
+    ("Holdrian Comma",  sp.Integer(2) ** sp.Rational(1, 53)),
     ("Pythagorean Comma", sp.Rational(531441, 524288)),
-    ("Eighth Tone",  sp.Integer(2) ** sp.Rational(1,48)),
+    ("Eighth Tone",  sp.Integer(2) ** sp.Rational(1, 48)),
     ("Sixty-fifth Harmonic", sp.Rational(65, 64)),
     ("Septimal Comma", sp.Rational(64, 63)),
     ("Ptolemy's Enharmonic", sp.Rational(56, 55)),
-    ("Sixth Tone",  sp.Integer(2) ** sp.Rational(1,36)),
+    ("Sixth Tone",  sp.Integer(2) ** sp.Rational(1, 36)),
     ("Septimal Sixth Tone",  sp.Rational(50, 49)),
     ("Inferior Quarter Tone",  sp.Rational(46, 45)),
     ("Undecimal Diesis",  sp.Rational(45, 44)),
-    ("Fifth Tone",  sp.Integer(2) ** sp.Rational(1,30)),
+    ("Fifth Tone",  sp.Integer(2) ** sp.Rational(1, 30)),
     ("Enharmonic Diesis",  sp.Rational(128, 125)),
     ("Lesser 41-limit Fifth Tone",  sp.Rational(42, 41)),
     ("Greater 41-limit Fifth Tone",  sp.Rational(41, 40)),
     ("Septimal Quarter Tone",  sp.Rational(36, 35)),
     ("Just Quarter Tone",  sp.Rational(246, 239)),
-    ("Equal-tempered Quarter Tone",  sp.Integer(2) ** sp.Rational(1,24)),
+    ("Equal-tempered Quarter Tone",  sp.Integer(2) ** sp.Rational(1, 24)),
     ("Lesser 17-limit Quarter Tone",  sp.Rational(35, 34)),
     ("Harrison's Comma",  sp.Rational(59049, 57344)),
     ("Greater 17-limit Quarter Tone",  sp.Rational(34, 33)),
@@ -98,7 +100,7 @@ interval_catalog = [
     ("Beta Scale Step",  sp.Rational(3, 2) ** sp.Rational(1, 11)),
     ("Chromatic Diesis",  sp.Rational(27, 26)),
     ("One-hundred-thirty-third Harmonic",  sp.Rational(133, 128)),
-    ("Third Tone",  sp.Integer(2) ** sp.Rational(1,18)),
+    ("Third Tone",  sp.Integer(2) ** sp.Rational(1, 18)),
     ("Tridecimal Third Tone",  sp.Rational(26, 25)),
     ("Just Chromatic Semitone",  sp.Rational(25, 24)),
     ("Lesser 23-limit Semitone",  sp.Rational(24, 23)),
@@ -113,7 +115,7 @@ interval_catalog = [
     ("Novendecimal Minor Second",  sp.Rational(19, 18)),
     ("121st Subharmonic",  sp.Rational(128, 121)),
     ("Just Minor Semitone",  sp.Rational(18, 17)),
-    ("Equal-tempered Minor Second",  sp.Integer(2) ** sp.Rational(1,12)),
+    ("Equal-tempered Minor Second",  sp.Integer(2) ** sp.Rational(1, 12)),
     ("Minor Diatonic Semitone",  sp.Rational(17, 16)),
     ("Just Minor Second",  sp.Rational(16, 15)),
     ("Pythagorean Major Semitone",  sp.Rational(2187, 2048)),
@@ -122,17 +124,17 @@ interval_catalog = [
     ("Lesser Tridecimal 2/3-tone",  sp.Rational(14, 13)),
     ("Sixty-ninth Harmonic",  sp.Rational(69, 64)),
     ("Semitone maximus",  sp.Rational(27, 25)),
-    ("Two-third Tone",  sp.Integer(2) ** sp.Rational(1,19)),
+    ("Two-third Tone",  sp.Integer(2) ** sp.Rational(1, 19)),
     ("Greater Tridecimal 2/3-tone",  sp.Rational(13, 12)),
-    ("Equal-tempered Neutral Second",  sp.Integer(2) ** sp.Rational(3,24)),
-    ("3/4-tone",  sp.Rational(12,11)),
+    ("Equal-tempered Neutral Second",  sp.Integer(2) ** sp.Rational(3, 24)),
+    ("3/4-tone",  sp.Rational(12, 11)),
     ("Thirty-fifth Harmonic",  sp.Rational(35, 32)),
     ("Grave Whole Tone",  sp.Rational(800, 729)),
     ("Ptolemy's second",  sp.Rational(11, 10)),
     ("Seventy-first Harmonic",  sp.Rational(71, 64)),
     ("Pythagorean Diminished Third",  sp.Rational(65536, 9049)),
     ("Small Just Whole Tone",  sp.Rational(10, 9)),
-    ("Equal-tempered Major Second",  sp.Integer(2) ** sp.Rational(2,12)),
+    ("Equal-tempered Major Second",  sp.Integer(2) ** sp.Rational(2, 12)),
     ("Pythagorean Major Second",  sp.Rational(9, 8)),
     ("Hundred-forty-fifth Harmonic",  sp.Rational(145, 128)),
     ("Just Diminished Third",  sp.Rational(256, 225)),
@@ -146,9 +148,9 @@ interval_catalog = [
     ("Just Augmented Second",  sp.Rational(75, 64)),
     ("Pythagorean Minor Third",  sp.Rational(32, 27)),
     ("19th Harmonic",  sp.Rational(19, 16)),
-    ("Equal-tempered Minor Third",  sp.Integer(2) ** sp.Rational(3,12)),
+    ("Equal-tempered Minor Third",  sp.Integer(2) ** sp.Rational(3, 12)),
     ("Quasi-equal-tempered Minor Third",  sp.Rational(25, 21)),
-    ("Quarter-comma Meantone Minor Third",  sp.Rational(8,5)/(sp.Rational(81, 80)**sp.Rational(1,4))),
+    ("Quarter-comma Meantone Minor Third",  sp.Rational(8, 5)/(sp.Rational(81, 80)**sp.Rational(1, 4))),
     ("Alpha Scale Minor Third",  sp.Rational(3, 2) ** sp.Rational(4, 9)),
     ("Just Minor Third",  sp.Rational(6, 5)),
     ("Pythagorean Augmented Second",  sp.Rational(19683, 16384)),
@@ -210,12 +212,12 @@ interval_catalog = [
     ("5-limit Wolf Fifth",  sp.Rational(40, 27)),
     ("Ninety-fifth Harmonic",  sp.Rational(95, 64)),
     ("12167th Harmonic",  sp.Rational(12167, 8192)),
-    ("Half-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(1,2))),
-    ("1/3-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(1,3))),
-    ("2/7-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(2,7))),
-    ("Quarter-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(1,4))),
-    ("1/5-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(1,5))),
-    ("1/6-comma Meantone Perfect Fifth",  sp.Rational(3,2)/(sp.Rational(81, 80)**sp.Rational(1,6))),
+    ("Half-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(1, 2))),
+    ("1/3-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(1, 3))),
+    ("2/7-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(2, 7))),
+    ("Quarter-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(1, 4))),
+    ("1/5-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(1, 5))),
+    ("1/6-comma Meantone Perfect Fifth",  sp.Rational(3, 2)/(sp.Rational(81, 80)**sp.Rational(1, 6))),
     ("Equal-tempered Perect Fifth",  sp.Integer(2) ** sp.Rational(7, 12)),
     ("53-TET Perect Fifth",  sp.Integer(2) ** sp.Rational(31, 53)),
     ("Perfect Fifth",  sp.Rational(3, 2)),
@@ -241,7 +243,7 @@ interval_catalog = [
     ("Pythagorean Augmented Fifth",  sp.Rational(6561, 4096)),
     ("Hundred-third Harmonic",  sp.Rational(103, 64)),
     ("Two-hundred-seventh Harmonic",  sp.Rational(207, 128)),
-    ("Golden Ratio", sp.Integer(5) ** sp.Rational(1,2) +  sp.Rational(1, 2)),
+    ("Golden Ratio", sp.Integer(5) ** sp.Rational(1, 2) + sp.Rational(1, 2)),
     ("Golden Ratio Approximation", sp.Rational(233, 144)),
     ("Acute Minor Sixth", sp.Rational(81, 50)),
     ("Tridecimal Neutral Sixth", sp.Rational(13, 8)),
@@ -318,4 +320,3 @@ all_constructors = [
     (five_limit_constructors, "Five"),
     (edo12_constructors, "12-EDO"),
 ]
-

@@ -5,7 +5,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(name='PyTuning',
-      version='HEAD',
+      version='0.0.0-dev',
       description='A Python package for the exploration of musical tunings.',
       author='Mark Conway Wirt',
       author_email='markcwirt@gmail.com',
@@ -13,12 +13,12 @@ setup(name='PyTuning',
       url='https://github.com/MarkCWirt/PyTuning',
       packages=find_packages(where="src"),
       scripts=['src/pytuning/interactive.py'],
-      install_requires = ['sympy', 'numpy'],
-      package_dir = {'': 'src'},
+      install_requires=['sympy', 'numpy'],
+      package_dir={'': 'src'},
       package_data={
-          '' : ['README.rst', 'License.txt', 'docs/*'],
+          '': ['README.rst', 'License.txt', 'docs/*'],
           },
-      include_package_data = True,
+      include_package_data=True,
       platforms='Platform Independent',
       classifiers=[
             'Development Status :: 4 - Beta',
@@ -31,6 +31,6 @@ setup(name='PyTuning',
             'Topic :: Multimedia :: Sound/Audio :: Analysis',
             'Topic :: Software Development :: Libraries :: Python Modules',
           ],
-      keywords = 'Music Scales Tuning Microtonalities',
+      keywords='Music Scales Tuning Microtonalities',
       long_description=long_description
-     )
+      )
